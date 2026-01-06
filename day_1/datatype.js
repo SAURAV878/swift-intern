@@ -10,6 +10,8 @@ const userProfile = {
         console.log(this);
     }
 };
+
+
 console.log(this);
 userProfile.abc()
 
@@ -21,3 +23,7 @@ const obj = {
     }
 };
 obj.show()
+
+
+
+
