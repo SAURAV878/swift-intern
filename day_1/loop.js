@@ -94,25 +94,51 @@
 // };
 
 
-const orders = [
-    {id: 1, amount: 50, status: "shipped"},
-    {id: 2, amount: 150, status: "pending"},
-    {id: 3, amount: 10, status: "shipped"},
-    {id: 4, amount: 200, status: "canceled"}
+// const orders = [
+//     {id: 1, amount: 50, status: "shipped"},
+//     {id: 2, amount: 150, status: "pending"},
+//     {id: 3, amount: 10, status: "shipped"},
+//     {id: 4, amount: 200, status: "canceled"}
+// ];
+
+// let totalValue = 0;
+
+// for (const order of orders ) {
+//     if (order.status === "canceled") {
+//         console.log("it is canceled");
+//         continue;
+//     }
+//     console.log("Order "+ order.id + " is "+ order.status + " and cost $" + order.amount);
+
+//     totalValue += order.amount;
+// };
+
+// console.log(totalValue);
+
+
+const cart = [
+    {name: "Laptop", price:'1000', quantity: 1},
+    {name: "Mouse", price:'50', quantity: 2},
+    {name: "keyboard", price:'80', quantity: 1}
 ];
 
-let totalValue = 0;
+let finalBill = 0;
 
-for (const order of orders ) {
-    if (order.status === "canceled") {
-        console.log("it is canceled");
-        continue;
-    }
-    console.log("Order "+ order.id + " is "+ order.status + " and cost $" + order.amount);
+for (const product of cart) {
+    let totalPrice = product.price * product.quantity
+    console.log(totalPrice);
 
-    totalValue += order.amount;
+    finalBill += totalPrice;
 };
 
-console.log(totalValue)
+if (finalBill > 1000) {
+    finalBill -= 100;
+    console.log("discounted bill: " + finalBill);
+} else {
+    console.log(finalBill);
+};
+
+
+
 
 
