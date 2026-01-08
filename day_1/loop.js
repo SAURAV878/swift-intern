@@ -34,3 +34,61 @@ while (pass !== correctPassword) {
 
 console.log("accses: "+ attempts);
 
+let statusCode = 404;
+
+switch (statusCode){
+    case 200:
+        console.log("everything is ok");
+        break;
+    case 404:
+        console.log("page not found");
+        break;
+    case 500:
+        console.log("the server crashed");
+        break;
+    default:
+        console.log("stop");
+}
+
+let water = 100
+
+while (water > 0) {
+    console.log ("watering the plants:" + water);
+    water -= 20;
+}
+console.log ("water is empty");
+
+for (let i=1; i <= 10; i++ ) {
+    let result = i * 5;
+    console.log ('5 x' + i + '=' + result);
+};
+
+for (let i = 2; i <= 20; i++) {
+    if (i % 2 === 0) {
+       console.log("they are even" + i);
+    } 
+};
+
+let balance = 0;
+
+for (let month = 1; month <= 6; month++) {
+    balance = balance + 100;
+    console.log("Saving machine " + month + ' = ' + balance);
+};
+
+for (let i= 1; i <= 10; i ++) {
+    console.log("serving water: " + i);
+    if (i === 4 ) {
+        console.log("out of water! going back ");
+        break;
+    }
+};
+
+
+for (let i = 1;  i <= 5; i++) {
+    if (i === 3) {
+        console.log("STudnet 3 is absent, skippking");
+        continue;
+    }
+    console.log("Studebnt" + i + "is present");
+};
