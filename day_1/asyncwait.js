@@ -53,3 +53,39 @@
 // showWeather();
 
 
+// function checkPassword (password) {
+//     return new Promise (function(resolve, reject) {
+
+//         setTimeout (function() {
+//             if (password === "1234") {
+//                 resolve("login"); 
+//             } else {
+//                 reject("wrong pass")
+//             }
+//         }, 2000);
+//     });
+// };
+
+// async function loginProcess () {
+//     try {
+//         const pass = await checkPassword("999");
+//         console.log("password is right" + pass);
+//     } catch (error) {
+//         console.log("check password" + error);
+//     }
+// };
+
+// loginProcess();
+
+
+// function validateEmail (email) {
+//     if (email.includes ("@") && email.includes(".")) {
+//         return true;
+//     } else {
+//         return false;
+//     };
+
+// };
+
+// const result = validateEmail("ghimiresaurav@gmailcom");
+// console.log("email:" + result);
