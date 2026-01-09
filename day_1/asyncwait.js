@@ -78,14 +78,46 @@
 // loginProcess();
 
 
-// function validateEmail (email) {
-//     if (email.includes ("@") && email.includes(".")) {
-//         return true;
-//     } else {
-//         return false;
-//     };
+function validateEmail (email) {
+    if (email.includes ("@") && email.includes(".")) {
+        return true;
+    } else {
+        return false;
+    };
 
-// };
+};
 
-// const result = validateEmail("ghimiresaurav@gmailcom");
-// console.log("email:" + result);
+function checkDatabase (email) {
+    return new Promise (function (resolve, reject) {
+
+        setTimeout (function () {
+            if (email === "saurav@gmail.com") {
+                reject ("User already exixts");
+            } else {
+                resolve ("email is avaible");
+            }
+        }, 3000);
+
+    });
+};
+
+
+async function registerProcess(email) {
+    let isValid = validateEmail(email);
+    if ( !isValid ) {
+        console.log("invalid format");
+        return;
+    };
+
+    try {
+        let dbResult = await checkDatabase(email);
+        console.log(dbResult);
+
+    } catch (err) {
+        console.log(err);
+    };
+};
+
+registerProcess("ghimiresauravgmailcom");
+registerProcess("sauravgmailcom");
+
