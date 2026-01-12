@@ -78,46 +78,90 @@
 // loginProcess();
 
 
-function validateEmail (email) {
-    if (email.includes ("@") && email.includes(".")) {
-        return true;
-    } else {
-        return false;
-    };
+// function validateEmail (email) {
+//     if (email.includes ("@") && email.includes(".")) {
+//         return true;
+//     } else {
+//         return false;
+//     };
 
-};
+// };
 
-function checkDatabase (email) {
-    return new Promise (function (resolve, reject) {
+// function checkDatabase (email) {
+//     return new Promise (function (resolve, reject) {
 
-        setTimeout (function () {
-            if (email === "saurav@gmail.com") {
-                reject ("User already exixts");
-            } else {
-                resolve ("email is avaible");
-            }
-        }, 3000);
+//         setTimeout (function () {
+//             if (email === "saurav@gmail.com") {
+//                 reject ("User already exixts");
+//             } else {
+//                 resolve ("email is avaible");
+//             }
+//         }, 3000);
 
+//     });
+// };
+
+
+// async function registerProcess(email) {
+//     let isValid = validateEmail(email);
+//     if ( !isValid ) {
+//         console.log("invalid format");
+//         return;
+//     };
+
+//     try {
+//         let dbResult = await checkDatabase(email);
+//         console.log(dbResult);
+
+//     } catch (err) {
+//         console.log(err);
+//     };
+// };
+
+// registerProcess("ghimiresauravgmailcom");
+// registerProcess("sauravgmailcom");
+
+// function genenrateReport () {
+//     let report = [];
+
+//     for (i=1; i<=20; i++ ){
+//         if ( i % 3 ===0 && i % 5 === 0) {
+//             report.push("FizzBuzz");
+//         } else if (i % 3 === 0) {
+//             report.push("Fizz");
+//         } else if ( i % 5 === 0) {
+//             report.push("BUzz");
+//         } else {
+//             report.push(i);
+//         }
+//     };
+//     return report;
+// };
+
+// console.log(genenrateReport());
+
+const items = [
+    {name: "apple", price: 10, category: "fruits"},
+    {name: "BATTERY", price: -5, category: "electronics"},
+    {name: "orange", price: 15, category: "fruits"},
+    {name: "tablet", price: 200, category: "electronics"},
+];
+
+function cleanInventory (items) {
+    const list = items.filter(function(item) {
+        return item.price >= 0;
     });
+
+    const clist = list.map(function(item) {
+        return {
+            name: item.name.trim().toLowerCase(),
+            price: item.price,
+            category: item.category
+        };
+    });
+    return clist;
 };
 
+console.log(cleanInventory(items));
 
-async function registerProcess(email) {
-    let isValid = validateEmail(email);
-    if ( !isValid ) {
-        console.log("invalid format");
-        return;
-    };
-
-    try {
-        let dbResult = await checkDatabase(email);
-        console.log(dbResult);
-
-    } catch (err) {
-        console.log(err);
-    };
-};
-
-registerProcess("ghimiresauravgmailcom");
-registerProcess("sauravgmailcom");
 
