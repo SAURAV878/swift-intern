@@ -1,5 +1,7 @@
 // const fs = require('fs');
 
+const { futimesSync } = require('fs');
+
 // console.log("1. Asking node to read a file");
 
 // fs.readFile('ghost.txt', 'utf8', function(err, data){
@@ -88,22 +90,99 @@
 
 // run();
 
+// const fs = require('fs').promises;
+// console.log('doing it in modern way');
+
+// async function combinnig() {
+//     try {
+//         console.log('staring operations');
+//         const data = await fs.writeFile('activity.txt', 'log Start\n');
+
+//         const file = await fs.appendFile('activity.txt', 'user saurav logged in at 10:05 am');
+
+//         const read = await fs.readFile('activity.txt', 'utf8');
+//         console.log(read);
+//     } catch (err) {
+//         console.log("error found: " + err);
+//     }
+
+// };
+
+// combinnig();
+
+// const fs = require('fs').promises;
+// function wait(ms) {
+//     return new Promise (function(resolve, reject) {
+
+//         setTimeout (function() {
+//             resolve();
+//         }, ms);
+//     })
+// };
+
+// async function time () {
+//     try {
+//         console.log("Checking file");
+
+//         await wait(3000);
+
+//         const data = await fs.readFile('activity.txt', 'utf8');
+//         console.log(data);
+
+        
+//     } catch (err) {
+//         console.log(err);
+//     }
+// };
+
+// time();
+
+
+const students = [
+    {name: 'Saurav', score: '85'},
+    {name:'Ram',  score:'35'},
+    {name:'Sita',  score:'90'},
+    {name:'Gopal',  score:'25'},
+];
+
 const fs = require('fs').promises;
-console.log('doing it in modern way');
+function wait(ms) {
+    return new Promise (function(reslove, reject) {
+        setTimeout (function(){
+            reslove("server calacution");
+        }, ms);
+    });
+}
 
-async function combinnig() {
-    try {
-        console.log('staring operations');
-        const data = await fs.writeFile('activity.txt', 'log Start\n');
+async function passed() {
+    try{
+        for (const student of students){
+            if ( student.score >= 40) {
+                console.log('passed: ' + student.name);
+            };
+        }
 
-        const file = await fs.appendFile('activity.txt', 'user saurav logged in at 10:05 am');
+        await wait(4000);
 
-        const read = await fs.readFile('activity.txt', 'utf8');
+        const winners = students.filter(function (student) {
+            return student.score >= 40;
+        });
+
+        const names = winners.map(function (student) {
+            return student.name;
+        })
+
+
+        const reportText = names.join(', ');
+        await fs.writeFile('passed_students.txt', 'Passed Students\n: ' + reportText);
+
+
+        const read = await fs.readFile('passed_students.txt', 'utf8');
         console.log(read);
+
     } catch (err) {
-        console.log("error found: " + err);
+        console.log(err);
     }
+}
 
-};
-
-combinnig();
+passed();
