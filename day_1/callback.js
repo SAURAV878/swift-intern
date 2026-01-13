@@ -71,3 +71,39 @@
 //         console.log(data);
 //     }
 // });
+
+// const fs = require('fs').promises;
+
+// console.log("Trying to do with promises");
+
+// async function run() {
+//     try {
+//         const data = await fs.readFile('log.txt', 'utf8');
+//         console.log(data);
+//     } catch (err) {
+//         console.log(err);
+
+//     }
+// };
+
+// run();
+
+const fs = require('fs').promises;
+console.log('doing it in modern way');
+
+async function combinnig() {
+    try {
+        console.log('staring operations');
+        const data = await fs.writeFile('activity.txt', 'log Start\n');
+
+        const file = await fs.appendFile('activity.txt', 'user saurav logged in at 10:05 am');
+
+        const read = await fs.readFile('activity.txt', 'utf8');
+        console.log(read);
+    } catch (err) {
+        console.log("error found: " + err);
+    }
+
+};
+
+combinnig();
