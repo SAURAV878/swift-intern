@@ -41,14 +41,33 @@
 // });
 
 
-const fs = require('fs');
+// const fs = require('fs');
 
-console.log('wait');
+// console.log('wait');
 
-fs.appendFile('log.txt', '\n: User just logged in', function(err, data) {
-    if (err) {
-        console.log("not ");
-    } else {
-        console.log("hey log.txt");
-    }
-});
+// fs.appendFile('log.txt', '\n: User just logged in', function(err, data) {
+//     if (err) {
+//         console.log("not ");
+//     } else {
+//         console.log("hey log.txt");
+//     }
+// });
+
+// const fs = require('fs');
+
+// console.log('netsing fs under fs');
+
+// fs.readFile('secret.txt', 'utf8', function(err, data) {
+//     if (err) {
+//         console.log('no file');
+//         fs.writeFile('secret.txt', 'I created this because it was missing', function(err) {
+//             if (err) {
+//                 console.log("error file craeted")
+//             } else {
+//                 console.log('succesfull')
+//             }
+//         });
+//     } else {
+//         console.log(data);
+//     }
+// });
