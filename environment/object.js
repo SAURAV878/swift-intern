@@ -9,17 +9,19 @@ profile.level = 2;
 
 delete profile.name;
 
-
-
 console.log(profile.name);
 console.log(profile);
+
 console.log(profile.social.github);
+
 
 const colne = {...profile };
 colne.level = 99;
 
 colne.social.github = 'hacked';
 
+console.log('profile: ', profile);
 console.log('ooriginal level: ', profile.level);
 console.log('clone level: ', colne.level);
 console.log('original github: ', profile.social.github);
+
