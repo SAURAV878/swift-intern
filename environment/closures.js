@@ -1,28 +1,28 @@
-// function outer () {
-//     const message = 'hello from the parent';
-//     inner();
+function outer () {
+    const message = 'hello from the parent';
+    inner();
 
-//     function inner () {
-//         console.log(message);
-//     }
-// }
+    function inner () {
+        console.log(message);
+    }
+}
 
-// outer();
+outer();
 
-// function createCounter () {
-//     let count = 0;
-//     return () => {
-//         count += 1;
-//         console.log(count);
-//     };
-// };
+function createCounter () {
+    let count = 0;
+    return () => {
+        count += 1;
+        console.log(count);
+    };
+};
 
-// const myCounter = createCounter();
-// const myCount = createCounter();
-// myCounter();
-// myCounter();
-// myCounter();
-// myCount();
+const myCounter = createCounter();
+const myCount = createCounter();
+myCounter();
+myCounter();
+myCounter();
+myCount();
 
 function createInterestCal (rate) {
  
