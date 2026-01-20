@@ -1,23 +1,23 @@
-// function saveData (text) {
-//     console.log('saving to database: ' + text);
-// }
+function saveData (text) {
+    console.log('saving to database: ' + text);
+}
 
-// function debounce (func, wait) {
-//     let timeoutId;
-//     return () => {
-//         clearTimeout(timeoutId);
+function debounce (func, wait) {
+    let timeoutId;
+    return () => {
+        clearTimeout(timeoutId);
 
-//         timeoutId = setTimeout(() => {
-//             func()
-//         }, wait);
-//     }
-// }
+        timeoutId = setTimeout(() => {
+            func()
+        }, wait);
+    }
+}
 
-// const processChange = debounce(() => {
-//     saveData('laptop')
-// }, 2000);
+const processChange = debounce(() => {
+    saveData('laptop')
+}, 2000);
 
-// processChange();
+processChange();
 
 
 function saveToCloud (text) {
