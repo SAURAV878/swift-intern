@@ -9,32 +9,32 @@ function outer () {
 
 outer();
 
-function createCounter () {
-    let count = 0;
-    return () => {
-        count += 1;
-        console.log(count);
-    };
-};
+// function createCounter () {
+//     let count = 0;
+//     return () => {
+//         count += 1;
+//         console.log(count);
+//     };
+// };
 
-const myCounter = createCounter();
-const myCount = createCounter();
-myCounter();
-myCounter();
-myCounter();
-myCount();
+// const myCounter = createCounter();
+// const myCount = createCounter();
+// myCounter();
+// myCounter();
+// myCounter();
+// myCount();
 
-function createInterestCal (rate) {
+// function createInterestCal (rate) {
  
-    return (amount) => {
-        console.log('interest: ' + (amount * rate));
-    };
+//     return (amount) => {
+//         console.log('interest: ' + (amount * rate));
+//     };
 
-};
+// };
 
-const nabilBank = createInterestCal(0.10); 
-const globalBank = createInterestCal(0.05); 
+// const nabilBank = createInterestCal(0.10); 
+// const globalBank = createInterestCal(0.05); 
 
 
-nabilBank(1000); 
-globalBank(1000); 
+// nabilBank(1000); 
+// globalBank(1000); 
