@@ -24,12 +24,11 @@ const utils = {
 }
 
 const processUsers = async()  => {
-    const result = user.filter(u => (
-        utils.isPasswordValid(u.pass)
-    ));
+    const result = user.filter(u => (utils.isPasswordValid(u.pass)));
 
     const term = result.map(u => ({
-        ...u, name: utils.formatName(u.name)
+        ...u, 
+        name: utils.formatName(u.name)
     }));
 
     await utils.wait(2000);
