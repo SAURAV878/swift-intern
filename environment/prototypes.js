@@ -19,3 +19,4 @@ Robot.prototype.charge = function() {
 
 r1.charge();
 r2.charge();
+
