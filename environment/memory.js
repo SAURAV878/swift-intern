@@ -11,7 +11,8 @@ const  leakedFunction =  heavyTask();
 
  const timer = setInterval (() => {
     leakedFunction();
-    if (condition) {
+
+    if (con) {
         clearInterval(timer);
     }
     }, 1000);
